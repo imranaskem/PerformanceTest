@@ -17,40 +17,25 @@ namespace PerformanceTest
 
             Console.WriteLine("Collection performance tester");
 
-            Console.WriteLine($"Test: Add performance of adding {addsToPerform.ToString("N0")} ints to each collection");
-                       
-            answers.Add("List", listTest.AddTest(addsToPerform));
-            
-            answers.Add("Hashset", hashTest.AddTest(addsToPerform));            
-                       
+            Console.WriteLine($"Test: Add performance of adding {addsToPerform.ToString("N0")} ints to each collection");                       
+            answers.Add("List", listTest.AddTest(addsToPerform));            
+            answers.Add("Hashset", hashTest.AddTest(addsToPerform));                                   
             answers.Add("Dictionary", dictTest.AddTest(addsToPerform));      
-
             PrintGraph(answers);
-
             answers.Clear();
 
             Console.WriteLine($"Test: Contains performance for {(addsToPerform / 4).ToString("N0")} ints in each collection");
-
             answers.Add("List", listTest.ContainsTest(addsToPerform));
-
             answers.Add("Hashset", hashTest.ContainsTest(addsToPerform));
-
             answers.Add("Dictionary(Key)", dictTest.KeyContainsTest(addsToPerform));
-
-            answers.Add("Dictionary(Value)", dictTest.ValueContainsTest(addsToPerform));
-            
+            answers.Add("Dictionary(Value)", dictTest.ValueContainsTest(addsToPerform));            
             PrintGraph(answers);
-
             answers.Clear();
 
             Console.WriteLine($"Test: Remove performance for {(addsToPerform / 4).ToString("N0")} ints in each collection");
-
             answers.Add("List", listTest.RemoveTest(addsToPerform));
-
             answers.Add("Hashset", hashTest.RemoveTest(addsToPerform));
-
             answers.Add("Dictionary", dictTest.RemoveTest(addsToPerform));
-
             PrintGraph(answers);
         }
 
