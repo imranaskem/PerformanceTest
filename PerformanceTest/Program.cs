@@ -17,7 +17,7 @@ namespace PerformanceTest
 
             Console.WriteLine("Collection performance tester");
 
-            Console.WriteLine($"Test: Add performance of adding {addsToPerform} ints to each collection");
+            Console.WriteLine($"Test: Add performance of adding {addsToPerform.ToString("N0")} ints to each collection");
                        
             answers.Add("List", listTest.AddTest(addsToPerform));
             
@@ -29,7 +29,7 @@ namespace PerformanceTest
 
             answers.Clear();
 
-            Console.WriteLine($"Test: Contains performance for {addsToPerform / 4} ints in each collection");
+            Console.WriteLine($"Test: Contains performance for {(addsToPerform / 4).ToString("N0")} ints in each collection");
 
             answers.Add("List", listTest.ContainsTest(addsToPerform));
 
@@ -43,7 +43,7 @@ namespace PerformanceTest
 
             answers.Clear();
 
-            Console.WriteLine($"Test: Remove performance for {addsToPerform / 4} ints in each collection");
+            Console.WriteLine($"Test: Remove performance for {(addsToPerform / 4).ToString("N0")} ints in each collection");
 
             answers.Add("List", listTest.RemoveTest(addsToPerform));
 
@@ -63,7 +63,7 @@ Collection          Ticks
 
             foreach (var item in answers)
             {
-                Console.WriteLine($"{item.Key, -18}  {item.Value, -1}");
+                Console.WriteLine($"{item.Key, -18}  {item.Value.ToString("N0"), -1}");
             }
             Console.WriteLine("-------------------------------");
 
